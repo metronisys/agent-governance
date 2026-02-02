@@ -139,6 +139,15 @@ Governance becomes **part of the agent’s reasoning loop**.
 
 ---
 
+## License
+
+This repository is licensed under the Apache License 2.0.
+
+The license permits use, modification, and commercial embedding
+of the governance materials contained herein.
+
+---
+
 ## Trademark & Usage
 
 **Metronisys™** is a trademark of John A. Nudd.  
