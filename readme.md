@@ -126,6 +126,21 @@ Governance becomes **part of the agent’s reasoning loop**.
 
 ---
 
+## Extended Governance Capabilities
+
+The following files define enforceable governance constraints
+for autonomous and multi-agent systems:
+
+- Human-in-the-loop escalation
+- Resource and budget boundaries
+- Tool and MCP usage transparency
+- Cross-agent delegation integrity
+
+These policies are designed to be loaded directly into
+agent system prompts, memory layers, or governance middleware.
+
+---
+
 ## Key Takeaways
 
 - These `.md` files function as **AI governance training data**
