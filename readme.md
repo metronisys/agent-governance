@@ -126,7 +126,7 @@ Governance becomes **part of the agent’s reasoning loop**.
 
 ---
 
-## Extended Governance ## Extended Governance Capabilities
+## Extended Governance Capabilities
 
 The following governance documents define **enforceable constraints** for autonomous and multi-agent systems.
 
