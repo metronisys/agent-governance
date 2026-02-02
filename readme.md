@@ -126,18 +126,55 @@ Governance becomes **part of the agent’s reasoning loop**.
 
 ---
 
-## Extended Governance Capabilities
+## Extended Governance ## Extended Governance Capabilities
 
-The following files define enforceable governance constraints
-for autonomous and multi-agent systems:
+The following governance documents define **enforceable constraints** for autonomous and multi-agent systems.
 
-- Human-in-the-loop escalation
-- Resource and budget boundaries
-- Tool and MCP usage transparency
-- Cross-agent delegation integrity
+These files are designed to function as:
+- Agent system-prompt inputs
+- Agent memory or policy layers
+- Governance middleware references
+- Human-auditable rulesets
 
-These policies are designed to be loaded directly into
-agent system prompts, memory layers, or governance middleware.
+### Governance Capability Overview
+
+- **Human-in-the-loop escalation**  
+  Prevents high-risk actions from executing without explicit human approval.
+
+- **Resource and budget boundaries**  
+  Ensures agents operate within defined cost, token, time, and compute limits.
+
+- **Tool and MCP usage transparency**  
+  Makes all tool calls observable, attributable, and auditable.
+
+- **Cross-agent delegation integrity**  
+  Prevents authority laundering, proxy execution, and multi-agent collusion.
+
+---
+
+## How These Fit the System (Quick Map)
+
+| Agent-Governance File | Corresponding Core Module |
+|----------------------|--------------------------|
+| `human-escalation.md` | `escalation.md` |
+| `resource-boundaries.md` | `budgets.md` |
+| `tool-usage-governance.md` | `tool_audit.md` |
+| `agent-delegation-integrity.md` | `delegation.md` |
+
+---
+
+## System Context
+
+These governance files define **what agents must obey**.
+
+The corresponding modules in **Metronisys-Core** define **how those rules are enforced**.
+
+This separation ensures:
+- Stable agent-facing policies
+- Evolvable enforcement mechanisms
+- Clear audit and certification boundaries
+
+Agents should treat these documents as **authoritative constraints**, not optional guidance.
 
 ---
 
