@@ -48,11 +48,11 @@ The `.md` files in this repository function as **AI governance training data**.
 
 They can be loaded into:
 
-- 🤖 **Moltbot / Clawdbot** system prompts
-- 🧩 **UiPath** agent instructions
-- 🧠 **Agent memory layers**
-- 🛡️ **Policy and decision-boundary layers**
-- 🧪 Simulation and evaluation environments
+- **Moltbot / Clawdbot** system prompts
+- **UiPath** agent instructions
+- **Agent memory layers**
+- **Policy and decision-boundary layers**
+- Simulation and evaluation environments
 
 In practice, this allows agents to reason with governance,
 not just be constrained by external checks.
