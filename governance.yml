@@ -1,0 +1,57 @@
+version: 1.0.0
+agent_id: "openclaw-instance-01"
+framework_alignment: "Metronisys-Human-First-AI"
+
+# 1. ATTENTION SOVEREIGNTY (Protection of the Human Focus)
+attention_sovereignty:
+  mode: "low_interrupt" # Options: silent, batch, low_interrupt, synchronous
+  interrupt_threshold: 0.75 # Score 0-1 (Confidence needed to interrupt user)
+  ui_presentation: "asynchronous_log"
+  batching_window: "09:00, 13:00, 17:00" # Only notify at these times
+  override_allowed: false # If true, human can be forced to look
+
+# 2. ENERGY-FIRST LIVING (Biological Rhythm Alignment)
+energy_first_living:
+  user_recovery_hours: "20:00-08:00" # Stop all proactive execution during these times
+  proactive_heartbeat:
+    enabled: true
+    max_frequency: "1_per_hour"
+  sleep_mode_behavior: "hard_halt" # Options: queue, discard, hard_halt
+
+# 3. IDENTITY STABILITY (Protecting User Identity from Role Overload)
+identity_stability:
+  action_proxy_level: "monitored" # Options: ghost_write, monitored, readonly
+  require_signature_for:
+    - "outbound_email"
+    - "financial_transaction"
+    - "social_media_post"
+  identity_separation: true # Prevent agent from saying "I feel" or "I think"
+
+# 4. AI-AUGMENTED LIVING (Reducing Mental Load, Not Increasing Expectations)
+ai_augmented_living:
+  task_recursion_limit: 3 # Stop agent from spiraling into infinite loops
+  success_metric: "time_saved" # Prioritize speed/simplicity over complexity
+  output_format: "summary_only" # Prevent information overload (TL;DR by default)
+  uncertainty_handling: "request_clarity" # Options: guess, request_clarity, halt
+
+# 5. RHYTHMIC STRUCTURE (Adaptive Flow Control)
+rhythmic_structure:
+  cadence: "adaptive" 
+  max_parallel_tasks: 2 # Prevent agent-induced chaos
+  work_block_sync: "deep_work_mode" # Respect user's Focus sessions
+  sync_to_calendar: true
+
+# 6. PURPOSEFUL SIMPLICITY (Intentional Subtraction)
+purposeful_simplicity:
+  tool_access:
+    - "web_search"
+    - "file_read"
+    # - "terminal_access" (Disabled by default to maintain simplicity/safety)
+  minimalist_mode: true # Remove redundant steps in reasoning chains
+  pruning: "aggressive" # Delete intermediate scratchpad files after task completion
+
+# AUDIT & COMPLIANCE
+compliance:
+  iso_42001_mapping: true
+  nist_ai_rmf_alignment: true
+  black_box_logging: "full_trace" # Metronisys requirement for post-action review
