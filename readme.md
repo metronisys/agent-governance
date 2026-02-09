@@ -1,193 +1,66 @@
-# Agent-Governance – Metronisys™
+# Metronisys Agent Governance
 
-Machine-readable governance for autonomous AI agents.
-
----
-
-## What This Repository Is
-
-**`agent-governance`** contains structured Markdown (`.md`) documents that define
-**governance principles, constraints, and behavioral expectations** for autonomous AI agents.
-
-These files are **not documentation for humans only**.
-
-They are designed to be **loaded directly into AI systems** as:
-- system prompts
-- agent instructions
-- policy memory
-- governance context
-
-This makes Metronisys governance **operational**, not symbolic.
+**Metronisys Agent Governance: A standardized framework for secure, transparent, and compliant AI agent orchestration.**
 
 ---
 
-## Why This Exists
+## 💡 Overview
 
-Autonomous agents can already:
-- Execute actions
-- Call tools
-- Modify systems
-- Operate continuously
+As AI agents transition from simple chatbots to autonomous entities with tool-access capabilities, the need for oversight becomes critical. The **Metronisys Agent Governance** framework provides a robust middleware layer designed to monitor, intercept, and audit AI agent behaviors in real-time.
 
-What they lack is **native governance**.
-
-Most frameworks treat governance as:
-- External policy
-- After-the-fact review
-- Human-only documentation
-
-Metronisys takes a different approach:
-
-> Governance must be **readable, interpretable, and enforceable by the agent itself**.
+This project implements the four pillars of agent oversight:
+1.  **Identity:** Unique attribution for every agent instance.
+2.  **Policy Enforcement:** Strict boundaries for tool usage and data access.
+3.  **Real-time Auditing:** Comprehensive logging of the reasoning chain.
+4.  **Lifecycle Management:** Controlled deployment and retirement of agentic workflows.
 
 ---
 
-## How These Files Are Used
+## 🛡️ Why Governance?
 
-The `.md` files in this repository function as **AI governance training data**.
+Unmanaged AI agents present significant operational and security risks. This framework is purpose-built to mitigate:
 
-They can be loaded into:
-
-- **Moltbot / Clawdbot** system prompts
-- **UiPath** agent instructions
-- **Agent memory layers**
-- **Policy and decision-boundary layers**
-- Simulation and evaluation environments
-
-In practice, this allows agents to reason with governance,
-not just be constrained by external checks.
+* **Prompt Injection:** Prevents malicious user inputs from hijacking the agent’s instructions or escalating privileges.
+* **Data Exfiltration:** Monitors outbound tool calls to ensure sensitive data (PII/PHI) does not leave your secure perimeter.
+* **Non-Deterministic Behavior:** Implements guardrails to ensure agents stay within their defined "operational envelope," reducing hallucinations and erratic tool usage.
+* **Shadow AI:** Provides a centralized control plane so that every agent action is logged and attributable to a specific identity and policy version.
 
 ---
 
-## Relationship to Other Metronisys Repos
+## 🏗️ Architecture
 
-| Repository | Role |
-|---------|------|
-| `metronisys-manifesto` | Human-readable philosophy and principles |
-| `agent-governance` | Machine-readable governance rules |
-| `metronisys-core` | Enforcement, orchestration, and audit mechanisms |
-| `metronisys-certification` | Compliance and validation frameworks |
+The framework acts as a **Governance Gateway** between the User, the LLM, and External Tools.
 
-**Manifesto → Governance Text → Enforcement Code**
+```mermaid
+graph TD
+    User((User/App)) -->|Request| Gateway[Governance Gateway]
+    
+    subgraph "Metronisys Governance Layer"
+        Gateway --> Policy[Policy Engine: RBAC & Guardrails]
+        Policy --> Interceptor[Action Interceptor]
+        Interceptor --> Audit[(Audit & Lineage Logs)]
+    end
+    
+    Interceptor -->|Authorized Call| Agent[AI Agent/LLM]
+    Agent -->|Tool Request| Interceptor
+    Interceptor -->|Validation| Tools[External Tools/APIs]
+    
+    Tools -->|Response| Gateway
+    Gateway -->|Safe Response| User
+```
 
-This repo sits in the **middle layer**.
+## Key Features
 
----
-
-## Design Principles
-
-### 1. Machine-Readable by Default
-Content is written so it can be:
-- Parsed
-- Embedded
-- Injected into prompts
-- Referenced during agent reasoning
-
-No decorative language.
-No ambiguity.
-
----
-
-### 2. Agent-Facing Language
-These documents are written **for agents**, not marketing.
-
-They define:
-- What is allowed
-- What is forbidden
-- When to escalate to humans
-- When to stop
-
----
-
-### 3. Framework-Agnostic
-The governance content assumes:
-- No specific LLM
-- No specific agent framework
-- No specific runtime
-
-Any agent capable of reading text can consume it.
-
----
-
-## Example Use Case
-
-An autonomous agent is asked to perform a task that:
-- touches a sensitive domain
-- exceeds a risk threshold
-- affects human wellbeing
-
-Before acting, the agent:
-1. Reads governance content from this repo
-2. Compares task intent against constraints
-3. Determines whether autonomy is permitted
-4. Escalates or blocks if required
-
-Governance becomes **part of the agent’s reasoning loop**.
-
----
-
-## Extended Governance Capabilities
-
-The following governance documents define **enforceable constraints** for autonomous and multi-agent systems.
-
-These files are designed to function as:
-- Agent system-prompt inputs
-- Agent memory or policy layers
-- Governance middleware references
-- Human-auditable rulesets
-
-### Governance Capability Overview
-
-- **Human-in-the-loop escalation**  
-  Prevents high-risk actions from executing without explicit human approval.
-
-- **Resource and budget boundaries**  
-  Ensures agents operate within defined cost, token, time, and compute limits.
-
-- **Tool and MCP usage transparency**  
-  Makes all tool calls observable, attributable, and auditable.
-
-- **Cross-agent delegation integrity**  
-  Prevents authority laundering, proxy execution, and multi-agent collusion.
-
----
-
-## How These Fit the System (Quick Map)
-
-| Agent-Governance File | Corresponding Core Module |
-|----------------------|--------------------------|
-| `human-escalation.md` | `escalation.md` |
-| `resource-boundaries.md` | `budgets.md` |
-| `tool-usage-governance.md` | `tool_audit.md` |
-| `agent-delegation-integrity.md` | `delegation.md` |
-
----
-
-## System Context
-
-These governance files define **what agents must obey**.
-
-The corresponding modules in **Metronisys-Core** define **how those rules are enforced**.
-
-This separation ensures:
-- Stable agent-facing policies
-- Evolvable enforcement mechanisms
-- Clear audit and certification boundaries
-
-Agents should treat these documents as **authoritative constraints**, not optional guidance.
-
----
-
-## Key Takeaways
-
-- These `.md` files function as **AI governance training data**
-- They can be loaded into:
-  - Moltbot / Clawdbot system prompts
-  - UiPath agent instructions
-  - Agent memory or policy layers
-
-- Metronisys becomes a **machine-readable philosophy**, not just branding
-- This positions Metronisys as a **new category: AI Agent Governor OS**
+* ​Policy-as-Code:
+Define agent permissions (tool access, data boundaries) in structured YAML/JSON configurations.
+​Zero-Trust Identity: Every agent is assigned a unique cryptographic identity to ensure non-repudiation of actions.
+​Unified Audit Trail: Centralized logging of reasoning chains, tool inputs, and outputs for forensic analysis.
+​Safety Guardrails: Real-time scanning of inputs and outputs for restricted content or unauthorized commands.
+​🛠️ Getting Started
+​Prerequisites
+​Python 3.9+
+​OpenAI / Anthropic API Key (or local LLM endpoint)
+​Installation
 
 ---
 
