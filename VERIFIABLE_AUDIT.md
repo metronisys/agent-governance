@@ -12,3 +12,16 @@ Every decision made by the Governor—especially blocks, delays, or task modific
 ## 2. Reasoning Transparency
 Users can query the Governor at any time using the command `metronisys --why`. 
 The system will provide a human-readable explanation of the internal "Human Sustainability Check" that influenced the last 10 actions.
+
+---
+
+## Trademark & Usage
+
+**Metronisys™** is a trademark of John A. Nudd.  
+Commercial use of the name requires permission.  
+Open-source usage is permitted under the license of this repository.
+
+---
+
+Metronisys exists to ensure that as AI agents gain autonomy,  
+**governance is embedded — not bolted on**.
