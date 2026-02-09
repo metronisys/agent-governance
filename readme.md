@@ -1,41 +1,29 @@
 # Metronisys Agent Governance
 
-**Metronisys Agent Governance: A standardized framework for secure, transparent, and compliant AI agent orchestration.**
+**The industry standard for Human-First AI. A framework designed to ensure your AI agents follow your lead, treating human attention as a protected resource.**
 
 ---
 
-## Overview
+## The Metronisys Philosophy
+Unlike standard technical guardrails, Metronisys Governance is built on the principle that **AI should reduce mental load, not increase expectations.** Our framework ensures that as agents become more autonomous, they remain aligned with the core Metronisys human principles:
 
-As AI agents transition from simple chatbots to autonomous entities with tool-access capabilities, the need for oversight becomes critical. The **Metronisys Agent Governance** framework provides a robust middleware layer designed to monitor, intercept, and audit AI agent behaviors in real-time.
+* **Attention Sovereignty:** Our "Human-in-the-Loop" gates are designed to protect your focus. Agents are governed to provide meaningful synthesis, not digital noise.
 
-This project implements the four pillars of agent oversight:
+* **Energy-First Orchestration:** Governance policies prioritize agent actions that preserve human biological energy and prevent burnout caused by AI-accelerated output.
 
-1.  **Identity:** Unique attribution for every agent instance.
-2.  **Policy Enforcement:** Strict boundaries for tool usage and data access.
-3. **Real-time Auditing:** Comprehensive logging of the reasoning chain.
-4. **Lifecycle Management:** Controlled deployment and retirement of agentic workflows.
+* **Intentional Autonomy:** We provide the technical constraints to ensure agents operate within purposeful limits, preventing "identity overload" and keeping the human in the driver's seat.
 
----
+## Why Governance? (Human & Technical Risks)
+We mitigate the critical failures that threaten both system security and human wellbeing:
 
-## Why Governance?
+* **Cognitive Overload:**
+Prevents agents from over-communicating or requiring excessive manual verification.
 
-Unmanaged AI agents present significant operational and security risks. This framework is purpose-built to mitigate:
+* **Prompt Injection & Data Risks:**
+Standard security guardrails to prevent unauthorized agent behavior.
 
-* **Prompt Injection:** Prevents malicious user inputs from hijacking the agent’s instructions or escalating privileges.
-  
-* **Data Exfiltration:** Monitors outbound tool calls to ensure sensitive data (PII/PHI) does not leave your secure perimeter.
-  
-* **Non-Deterministic Behavior:**
-Implements guardrails to ensure agents stay within their defined "operational envelope," reducing hallucinations and erratic tool usage.
-  
-* **Shadow AI:**
-Provides a centralized control plane so that every agent action is logged and attributable to a specific identity and policy version.
-
----
-
-## Architecture
-
-The framework acts as a **Governance Gateway** between the User, the LLM, and External Tools.
+* **Runaway Autonomy:**
+Ensures agents cannot drift into "unowned workflows" that conflict with human intent or organizational values.
 
 ```mermaid
 graph TD
