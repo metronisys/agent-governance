@@ -16,3 +16,16 @@ The Executor is restricted from sensitive system calls. It cannot:
 - Access the root file system (outside of a dedicated `/agent/work/` directory).
 - Spawn new processes or shell environments.
 - Access hardware drivers (Camera, Mic) without a specific Human-in-the-loop (HITL) prompt.
+
+---
+
+## Trademark & Usage
+
+**Metronisys™** is a trademark of John A. Nudd.  
+Commercial use of the name requires permission.  
+Open-source usage is permitted under the license of this repository.
+
+---
+
+Metronisys exists to ensure that as AI agents gain autonomy,  
+**governance is embedded — not bolted on**.
