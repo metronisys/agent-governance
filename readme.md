@@ -4,30 +4,36 @@
 
 ---
 
-## 💡 Overview
+## Overview
 
 As AI agents transition from simple chatbots to autonomous entities with tool-access capabilities, the need for oversight becomes critical. The **Metronisys Agent Governance** framework provides a robust middleware layer designed to monitor, intercept, and audit AI agent behaviors in real-time.
 
 This project implements the four pillars of agent oversight:
+
 1.  **Identity:** Unique attribution for every agent instance.
 2.  **Policy Enforcement:** Strict boundaries for tool usage and data access.
-3.  **Real-time Auditing:** Comprehensive logging of the reasoning chain.
-4.  **Lifecycle Management:** Controlled deployment and retirement of agentic workflows.
+3. **Real-time Auditing:** Comprehensive logging of the reasoning chain.
+4. **Lifecycle Management:** Controlled deployment and retirement of agentic workflows.
 
 ---
 
-## 🛡️ Why Governance?
+## Why Governance?
 
 Unmanaged AI agents present significant operational and security risks. This framework is purpose-built to mitigate:
 
 * **Prompt Injection:** Prevents malicious user inputs from hijacking the agent’s instructions or escalating privileges.
+  
 * **Data Exfiltration:** Monitors outbound tool calls to ensure sensitive data (PII/PHI) does not leave your secure perimeter.
-* **Non-Deterministic Behavior:** Implements guardrails to ensure agents stay within their defined "operational envelope," reducing hallucinations and erratic tool usage.
-* **Shadow AI:** Provides a centralized control plane so that every agent action is logged and attributable to a specific identity and policy version.
+  
+* **Non-Deterministic Behavior:**
+Implements guardrails to ensure agents stay within their defined "operational envelope," reducing hallucinations and erratic tool usage.
+  
+* **Shadow AI:**
+Provides a centralized control plane so that every agent action is logged and attributable to a specific identity and policy version.
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 The framework acts as a **Governance Gateway** between the User, the LLM, and External Tools.
 
@@ -51,17 +57,43 @@ graph TD
 
 ## Key Features
 
-* ​Policy-as-Code:
+* ​**Policy-as-Code:**
 Define agent permissions (tool access, data boundaries) in structured YAML/JSON configurations.
-​Zero-Trust Identity: Every agent is assigned a unique cryptographic identity to ensure non-repudiation of actions.
-​Unified Audit Trail: Centralized logging of reasoning chains, tool inputs, and outputs for forensic analysis.
-​Safety Guardrails: Real-time scanning of inputs and outputs for restricted content or unauthorized commands.
-​🛠️ Getting Started
-​Prerequisites
+
+* **​Zero-Trust Identity:**
+Every agent is assigned a unique cryptographic identity to ensure non-repudiation of actions.
+
+* **​Unified Audit Trail:**
+Centralized logging of reasoning chains, tool inputs, and outputs for forensic analysis.
+
+* **​Safety Guardrails:**
+Real-time scanning of inputs and outputs for restricted content or unauthorized commands.
+
+## ​Getting Started
+* **​Prerequisites**
+
 ​Python 3.9+
 ​OpenAI / Anthropic API Key (or local LLM endpoint)
 ​Installation
 
+```
+git clone [https://github.com/metronisys/agent-governance.git](https://github.com/metronisys/agent-governance.git)
+cd agent-governance
+pip install -r requirements.txt
+```
+* **Quick Start**
+​Configure your governance policies in configs/governance_policy.yaml and wrap your agent:
+
+```
+from metronisys.governance import GovernanceGateway
+
+# Initialize the governance layer
+governance = GovernanceGateway(policy_path="configs/default_policy.yaml")
+
+# Wrap your agent logic
+response = governance.execute(agent_input="Analyze Q4 financial trends")
+print(response)
+```
 ---
 
 ## License
