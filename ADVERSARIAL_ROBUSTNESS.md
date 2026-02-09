@@ -14,3 +14,16 @@ The framework includes a "Hard-Code Layer" that overrides AI logic. These are no
 - `MANDATORY_HUMAN_CONFIRMATION_ON_EMAILS: true`
 
 No amount of "AI reasoning" can override these hard-coded security primitives.
+
+---
+
+## Trademark & Usage
+
+**Metronisys™** is a trademark of John A. Nudd.  
+Commercial use of the name requires permission.  
+Open-source usage is permitted under the license of this repository.
+
+---
+
+Metronisys exists to ensure that as AI agents gain autonomy,  
+**governance is embedded — not bolted on**.
