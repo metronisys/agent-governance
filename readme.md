@@ -70,7 +70,7 @@ Centralized logging of reasoning chains, tool inputs, and outputs for forensic a
 Real-time scanning of inputs and outputs for restricted content or unauthorized commands.
 
 ## ​Getting Started
-* **​Prerequisites**
+**​Prerequisites**
 
 ​Python 3.9+
 ​OpenAI / Anthropic API Key (or local LLM endpoint)
@@ -81,7 +81,7 @@ git clone [https://github.com/metronisys/agent-governance.git](https://github.co
 cd agent-governance
 pip install -r requirements.txt
 ```
-* **Quick Start**
+**Quick Start**
 ​Configure your governance policies in configs/governance_policy.yaml and wrap your agent:
 
 ```
@@ -100,8 +100,7 @@ print(response)
 
 This repository is licensed under the Apache License 2.0.
 
-The license permits use, modification, and commercial embedding
-of the governance materials contained herein.
+The license permits use, modification, and commercial embedding of the governance materials contained herein.
 
 ---
 
