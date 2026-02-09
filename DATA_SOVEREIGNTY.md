@@ -12,3 +12,15 @@ User profiles (values, goals, and limits) are stored in an AES-256 encrypted vau
 
 ## 3. Prompt Scrubbing
 Before sending a task to an external Executor service, the Governor must perform a "PII Scrub," replacing names, locations, and sensitive identifiers with generic tokens.
+---
+
+## Trademark & Usage
+
+**Metronisys™** is a trademark of John A. Nudd.  
+Commercial use of the name requires permission.  
+Open-source usage is permitted under the license of this repository.
+
+---
+
+Metronisys exists to ensure that as AI agents gain autonomy,  
+**governance is embedded — not bolted on**.
