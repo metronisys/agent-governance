@@ -85,7 +85,8 @@ pip install -r requirements.txt
 ​Configure your governance policies in configs/governance_policy.yaml and wrap your agent:
 
 ```
-from metronisys.governance import GovernanceGateway
+from metronisys.governance
+import GovernanceGateway
 
 # Initialize the governance layer
 governance = GovernanceGateway(policy_path="configs/default_policy.yaml")
